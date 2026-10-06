@@ -7,7 +7,12 @@ authors = [
     { name = "shiziyao", email = "shrijisingh2001@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "pandas>=3.0.6",
+    "seaborn>=0.13.2",
+]
 
 [project.scripts]
 dsa-103-assignmet-6 = "dsa_103_assignmet_6:main"
