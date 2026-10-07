@@ -8,8 +8,9 @@ print(pd)
 
 
 #load the csv file
-data = pd.read_csv('setup_A.csv')
-#print(data.head())
+data = pd.read_csv('D:\Studium\UZH\BCH\DSA103\Reaction-Analysis-DSA-103-\session06_assignment\data\setup_A.csv' \')
+
+print(data.head())
 
 
 
