@@ -7,6 +7,20 @@ def calculate_reaction_rates(dataframe):
     final_dataset= pd.concat([dataframe,merged_data], axis=1)
     return final_dataset
 
+
+# OPTIMAL CONDITION IDEATION
+# for optimal conditions the condition used is yield/min and tempersture variable
+# since generally to get the optimum condition and since in this kind of problem the
+# optimal conditio is basically the function of all temp, reaction rate, time, ph
+# which will be determined only  by 3-d plotting it and by getting the maxima point using
+# the quadratic regression but since the data is quite linear here we cant use that
+# hence have used a proxy condition where top_yield > 0.9x max top_yield
+# temperature is capped at 46 celcius, since in industry increment in industry can result
+# in high yield but increment in temperature increases cost, hence just the high yield cant 
+# be the deciding factor, so here the the proxy condition used is highest yield/min with a 
+# capping of 46 celcius 
+# 
+#     
 def find_optimal_conditions(dataframe):
     """Analyze data to find optimal reaction conditions"""
     # for best conditions, the sweet spot should be yield>90% of max, and then the tradeoff
