@@ -3,7 +3,6 @@ from kinetics_analyzer import (
     compare_setups,
     find_optimal_conditions,
 )
-
 from data_cleaner import combine_datasets, load_and_clean_setup_data
 
 

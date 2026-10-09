@@ -1,0 +1,26 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def load_and_clean_setup_data(filepath, setup_name):
+       """Load and standardize data from one setup"""
+       setup_data = pd.read_csv(filepath)
+       """convert temperature units to celsius (if necessary)"""
+       if setup_name == 'B': 
+              setup_data['temp_fahrenheit'] = setup_data['temp_fahrenheit'].apply(lambda x: (x-32) /1.8)
+              setup_data["temp_fahrenheit"] = setup_data["temp_fahrenheit"].round(2)
+       """Standardize column names"""
+       setup_data.columns = ["time (min)", "temperature (°C)", "concentration (M)", "pH", "yield (%)"]
+       """handle missing values: if there is a missing value, drop the row"""
+       setup_data = setup_data.dropna()
+       """add a column to indicate the setup"""
+       setup_data['setup']= setup_name
+
+       pass
+
+def combine_datasets(setup_a_data, setup_b_data):
+       """Combine datasets from both setups"""
+       combined_data= pd.concat([setup_a_data, setup_b_data], ignore_index=True)
+
+       pass
